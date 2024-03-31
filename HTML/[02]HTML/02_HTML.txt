@@ -15,7 +15,7 @@
 과거에는 표를 사용해 레이아웃을 구성하기도 하였으나 현재는 권장하는 방법이 아니기에 사용하지 않는다 (but. 과거에 사용한 방식으로 단순히 표 제작만이 가능한건 아님) <br />
 
 
-### 표 병합하기
+#### 표 병합하기
 - <td rowspan="n"> : n칸만큼 가로행 병합, 가로+가로 병합으로 세로로 병합되는 형태 <br />
 - <td colspan="n"> : n칸만큼 세로행 병합, 세로+세로 병합으로 가로로 병합되는 형태 <br />
 !! span을 사용하고 n-1만큼 이어 작성되어 있던 태그를 삭제하면 정상적으로 병합 가능
@@ -28,7 +28,23 @@
 - alt : alternative text(대안 글자), 이미지가 깨지거나 로드되지 않을 경우 텍스트로 이미지 정보를 전달 <br />
 
 ### 멀티미디어 파일 삽입하기
-- <audio src=""></audio> : 오디오 전용 태그
-- <video src=""></video> : 비디오 전용 태그
-- <object> : HTML5 이전에 많이 쓰였던 태그, 이미지, PDF, 오디오, 비디오, 플러그인 등 (비표준)
-- <embed> : HTML5 이전에 많이 쓰였던 태그, 외부 콘텐츠를 간단히 삽입하는 태그로 현재는 거의 사용하지 않음 (비표준)
+- <audio src=""></audio> : 오디오 전용 태그 <br />
+- <video src=""></video> : 비디오 전용 태그 <br />
+- <object> : HTML5 이전에 많이 쓰였던 태그, 이미지, PDF, 오디오, 비디오, 플러그인 등 (비표준) <br />
+- <embed> : HTML5 이전에 많이 쓰였던 태그, 외부 콘텐츠를 간단히 삽입하는 태그로 현재는 거의 사용하지 않음 (비표준) <br />
+
+#### audio, vidio 태그 속성
+- <audio src="" controls></audio> : 사용자가 직접 재생 / 일시정지 / 볼륨 조절해야 할 때 컨트롤 바 표시 <br />
+- <audio src="" autoplay loop></audio> : 끝나면 자연스럽게 반복되어야 할 경우, 무한히 반복 재생 <br />
+- <audio src="" autoplay muted></video> : 소리를 제거하는 용도, 사용자 동작(클릭)이 생기면 JS로 음소거 해제 가능 <br />
+- <audio src="" autoplay muted loop></video> : 페이지 로드 시 자동으로 재생해야 하는 경우, 항상 muted랑 같이 사용 <br />
+
+#### preload 속성
+- <audio src="" controls preload="속성"></audio> : 페이지 로드 시 얼마나 미리 불러올지를 지정 <br />
+ㄴ auto : 전부 미리 로드(짧은 음원) <br />
+ㄴ metadata : 길이, 정보만(기본 추천) <br />
+ㄴ none : 전혀 안 불러옴(트래픽 절약) <br />
+!! 모바일에서는 auto가 무시될 수 있음 <br />
+
+#### poster(video 전용) 속성
+- <video src="" controls poster="이미지"></video> : 재생 전까지 화면에 표시될 포스터 이미지
