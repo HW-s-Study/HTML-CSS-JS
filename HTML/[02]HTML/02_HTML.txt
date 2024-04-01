@@ -33,7 +33,7 @@
 - <object> : HTML5 이전에 많이 쓰였던 태그, 이미지, PDF, 오디오, 비디오, 플러그인 등 (비표준) <br />
 - <embed> : HTML5 이전에 많이 쓰였던 태그, 외부 콘텐츠를 간단히 삽입하는 태그로 현재는 거의 사용하지 않음 (비표준) <br />
 
-#### audio, vidio 태그 속성
+#### audio, video 태그 속성
 - <audio src="" controls></audio> : 사용자가 직접 재생 / 일시정지 / 볼륨 조절해야 할 때 컨트롤 바 표시 <br />
 - <audio src="" autoplay loop></audio> : 끝나면 자연스럽게 반복되어야 할 경우, 무한히 반복 재생 <br />
 - <audio src="" autoplay muted></video> : 소리를 제거하는 용도, 사용자 동작(클릭)이 생기면 JS로 음소거 해제 가능 <br />
