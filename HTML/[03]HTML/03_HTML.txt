@@ -6,8 +6,9 @@
 !! target="_blank"를 이용해 새 창에서 열도록 할 수 있음 <br />
 -> target 속성은 이 링크가 어디에서 열릴지 선택할 수 있게 해줌 <br />
 
+
 ### 입력 양식(form) 사용하기
-- <form> : 특정 항목에 사용자가 뭔가를 입력할 수 있게 만든 것, 폼을 만드는 가장 기본적인 태그 <br />
+- <form> - </form> : 특정 항목에 사용자가 뭔가를 입력할 수 있게 만든 것, 폼을 만드는 가장 기본적인 태그 <br />
 ㄴ method : 사용자가 입력한 내용을 서버로 어떻게 넘겨줄 것인지 지정, get과 post 방식
 !! get의 경우 사용자가 입력한 내용이 주소에 나타나는 반면 post의 경우 나타나지 않음
 
@@ -15,3 +16,21 @@
 ㄴ name : 같은 속성의 태그를 구분하기 위한 이름, JS로 폼을 제어할 때 사용할 폼의 이름을 지정 <br />
 ㄴ target : action 속성에서 지정한 스크립트 파일을 다른 위치에서 열도록 함(위의 target과 동일) <br />
 ㄴ autocomplete : 브라우저가 이전에 입력했던 값을 기억해서 자동으로 표시, 자동완성(기본 속성값 on) <br />
+
+- <fieldset>
+- <legend>
+- <label>
+- <textarea>
+- <button>
+
+- <select><option> : Dropdown List(콤보 박스), 옵션에 있는 여러 종류들을 선택하기 쉽도록 드롭다운 메뉴로 표시 <br />
+ㄴ <select name=""> : name 속성을 이용해 선택된 값(option)을 서버로 전송 <br />
+ㄴ <option value=""> : name의 정보는 컴퓨터가 모르기에 서버가 정보를 이해할 수 있도록 값을 전송 <br />
+ㄴ <select multiple> : controls를 이용해 다중 선택이 가능하도록 하는 속성 <br />
+```
+<select name="">
+  <option>값</option>
+</select>
+```
+
+- <datalist><option> :
