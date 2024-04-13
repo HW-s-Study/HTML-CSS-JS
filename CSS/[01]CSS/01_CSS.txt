@@ -30,3 +30,11 @@ ex. ```color: red;```
 ㄴ hsl, hsla(색상, 채도, 명도, 불투명도) : 0 ~ 360의 각도(색상환)으로 색상을 표현(채도와 명도는 %로 표현) <br />
 ㄴ rgb, rgba(red, green, blue) : 색의 삼원색을 기준으로 각각 조절해 색상을 표현(a는 Alpha로 투명도를 의미) <br />
 ㄴ 16진수(#RRGGBB) : rgd를 16진수로 표현 <br />
+
+- text-align : 텍스트 정렬 <br />
+ㄴ start, end : 현재 텍스트 줄의 시작 or 끝 위치에 맞추어 문단을 정렬(기본은 start) <br />
+ㄴ left : 왼쪽 정렬 <br />
+ㄴ right : 오른쪽 정렬 <br />
+ㄴ center : 가운데 정렬 <br />
+ㄴ justify : 양쪽 여백에 맞추어 정렬 <br />
+ㄴ match-parent : 부모 요소를 따라 문단 정렬 <br />
