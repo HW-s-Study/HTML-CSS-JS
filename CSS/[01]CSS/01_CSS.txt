@@ -2,7 +2,7 @@
 ex. 'css text size property'(글자크기 속성) <br />
 
 ### 글꼴 관련 스타일
-- font-size : 글자 크기 지정,
+- font-size : 글자 크기 지정 <br />
 절대적 = <br />
 ㄴ px : 컴퓨터에 정해진 px 단위를 사용해 폰트 사이즈를 지정 <br />
 가변적 = <br />
@@ -19,5 +19,8 @@ ex. ```font-family: arial, verdana, '맑은 고딕';```
 
 - font-weight : 글자 굵기 지정(normal(400), bold(700), bolder, lighter, 100~900) <br />
 
-- font-style : 이탤릭체로 글자 표시 (normal, italic, oblique)
-!! oblique는 강제 이탤릭으로 이탤릭체가 없는 글꼴이어도 강제로 기울이는 효과
+- font-style : 이탤릭체로 글자 표시 (normal, italic, oblique) <br />
+!! oblique는 강제 이탤릭으로 이탤릭체가 없는 글꼴이어도 강제로 기울이는 효과 <br />
+
+
+### 텍스트 관련 스타일
