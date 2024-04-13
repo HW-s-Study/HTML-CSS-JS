@@ -24,3 +24,9 @@ ex. ```font-family: arial, verdana, '맑은 고딕';```
 
 
 ### 텍스트 관련 스타일
+- color : 글자색 지정 <br />
+ㄴ 색상 이름 : 유명한 색상들을 영문 텍스트로 지정 <br />
+ex. ```color: red;```
+ㄴ hsl, hsla(색상, 채도, 명도, 불투명도) : 0 ~ 360의 각도(색상환)으로 색상을 표현(채도와 명도는 %로 표현) <br />
+ㄴ rgb, rgba(red, green, blue) : 색의 삼원색을 기준으로 각각 조절해 색상을 표현(a는 Alpha로 투명도를 의미) <br />
+ㄴ 16진수(#RRGGBB) : rgd를 16진수로 표현 <br />
