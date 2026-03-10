@@ -13,6 +13,13 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  {
+
+    rules:{
+      "@typescript-eslint/no-unused-vars":"off",
+      "@typescript-eslint/no-explicit-any":"warn"
+    }
+  } // 규칙을 좀 풀어주는 느낌
 ]);
 
 export default eslintConfig;
