@@ -1,4 +1,3 @@
-console.log("Hello, World!");
 function getLength(a: string | string[]): number {
   return a.length;
 }
