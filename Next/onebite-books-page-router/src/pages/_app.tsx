@@ -1,4 +1,3 @@
-import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -12,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
         &nbsp;
         <Link href={"/search"}>검색</Link>
         &nbsp;
-        
+
         <button onClick={() => {
           router.push("/book/1");
         }}>
