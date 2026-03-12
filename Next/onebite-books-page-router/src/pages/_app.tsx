@@ -4,7 +4,9 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const router = useRouter();
+  const getLayout = Component.getLayout;
+  console.log(getLayout);
+  
   return (
     <GlobalLayout>
       <Component {...pageProps} />
