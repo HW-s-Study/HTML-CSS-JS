@@ -5,11 +5,11 @@ import { useRouter } from "next/router";
 
 export default function App({ Component, pageProps }: AppProps) {
   const getLayout = Component.getLayout;
-  console.log(getLayout);
+  // console.log(getLayout);
   
   return (
     <GlobalLayout>
-      <Component {...pageProps} />
+      {getLayout(<Component {...pageProps} />)}
     </GlobalLayout>
   );
 }
