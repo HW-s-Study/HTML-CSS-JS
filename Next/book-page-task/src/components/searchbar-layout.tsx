@@ -5,12 +5,22 @@ export default function SearchbarLayout({
 }: {
   children: ReactNode;
 }) {
-  const [count, setCount] = useState(0);
+  const [search, setSearch] = useState("");
+
+  const onChangeSerch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+  };
+  
   return (
     <div>
-      {count}
-      <button onClick={() => setCount((count) => count + 1)}>+</button>
-      <div>임시 검색 폼</div>
+      <div>
+        <input
+          value={search}
+          onChange={onChangeSerch}
+          placeholder="검색어를 입력하세요..."
+        />
+        <button>검색</button>
+      </div>
       {children}
     </div>
   );
