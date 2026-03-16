@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ReactNode } from "react";
+import styles from "./global-layout.module.css";
 
 export default function GlobalLayout({
   children,
@@ -7,12 +8,14 @@ export default function GlobalLayout({
   children: ReactNode;
 }) {
   return (
-    <div>
-      <header>
-        <Link href={"/"}>ONEBITE BOOKS</Link>
-      </header>
-      <main>{children}</main>
-      <footer>@winterlood</footer>
+    <div className={styles.container}>
+      <div>
+        <header>
+          <Link href={"/"}>ONEBITE BOOKS</Link>
+        </header>
+        <main>{children}</main>
+        <footer>@winterlood</footer>
+      </div>
     </div>
   );
 }
