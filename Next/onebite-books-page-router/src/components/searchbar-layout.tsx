@@ -1,14 +1,17 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 
 export default function SearchbarLayout({
   children,
 }: {
   children: ReactNode;
 }) {
+  const [count, setCount] = useState(0);
   return (
     <div>
-      <header>임시 검색 폼</header>
-      <main>{children}</main>
+      {count}
+      <button onClick={() => setCount((count) => count + 1)}>+</button>
+      <div>임시 검색 폼</div>
+      {children}
     </div>
   );
 }
