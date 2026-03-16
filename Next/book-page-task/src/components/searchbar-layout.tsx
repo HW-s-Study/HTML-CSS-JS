@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { ReactNode, useState } from "react";
+import { ReactNode, useState, useEffect } from "react";
 
 export default function SearchbarLayout({
   children,
@@ -13,9 +13,19 @@ export default function SearchbarLayout({
     setSearch(e.target.value);
   };
 
+  useEffect(() => {
+    setSearch((router.query.q as string) || "");
+  }, [router.query.q]);
+
   const onSubmitSearch = () => {
     if (!search || router.query.q === search) return;
     router.push(`/search?q=${search}`);
+  };
+
+  const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      onSubmitSearch();
+    }
   };
 
   return (
@@ -24,6 +34,7 @@ export default function SearchbarLayout({
         <input
           value={search}
           onChange={onChangeSerch}
+          onKeyDown={onKeyDown}
           placeholder="검색어를 입력하세요..."
         />
         <button onClick={onSubmitSearch}>검색</button>
