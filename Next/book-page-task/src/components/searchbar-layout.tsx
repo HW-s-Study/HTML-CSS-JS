@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { ReactNode, useState, useEffect } from "react";
+import style from "./searchbar-layout.module.css";
 
 export default function SearchbarLayout({
   children,
@@ -30,7 +31,7 @@ export default function SearchbarLayout({
 
   return (
     <div>
-      <div>
+      <div className={style.searchbar_container}>
         <input
           value={search}
           onChange={onChangeSerch}
