@@ -5,8 +5,13 @@ import s from "./index.module.css";
 export default function Home() {
 
   return (
-    <div>
-      <h1 className={s.title}>인덱스 페이지입니다.</h1>
+    <div className={s.container}>
+      <section>
+        <h3>지금 추천하는 도서</h3>
+      </section>
+      <section>
+        <h3>등록된 모든 도서</h3>
+      </section>
     </div>
   );
 }

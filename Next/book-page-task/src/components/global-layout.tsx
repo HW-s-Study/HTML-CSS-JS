@@ -9,13 +9,11 @@ export default function GlobalLayout({
 }) {
   return (
     <div className={styles.container}>
-      <div>
-        <header>
-          <Link href={"/"}>ONEBITE BOOKS</Link>
-        </header>
-        <main>{children}</main>
-        <footer>@winterlood</footer>
-      </div>
+      <header>
+        <Link href={"/"}>ONEBITE BOOKS</Link>
+      </header>
+      <main>{children}</main>
+      <footer>@winterlood</footer>
     </div>
   );
 }
