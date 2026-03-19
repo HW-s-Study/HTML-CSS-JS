@@ -1,8 +1,17 @@
 import SearchbarLayout from "@/components/searchbar-layout";
 import { ReactNode } from "react";
 import s from "./index.module.css";
+import { InferGetServerSidePropsType } from 'next';
 
-export default function Home() {
+export function getServerSideProps(){
+  const data = "임시 데이터";
+  return { props: {data} };
+}
+
+export default function Home({
+  data
+}:InferGetServerSidePropsType<typeof getServerSideProps>) { // getServerSideProps의 반환값 자동 추론
+  console.log(data);
 
   return (
     <div>
