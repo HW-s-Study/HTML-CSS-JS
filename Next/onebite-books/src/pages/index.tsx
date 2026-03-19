@@ -1,25 +1,25 @@
 import SearchbarLayout from "@/components/searchbar-layout";
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 import s from "./index.module.css";
-import { InferGetServerSidePropsType } from 'next';
+import BookItem from "@/components/book-item";
+import books from "@/mock/books.json";
 
-export function getServerSideProps(){
-  const data = "임시 데이터";
-  return { props: {data} };
-}
-
-export default function Home({
-  data
-}:InferGetServerSidePropsType<typeof getServerSideProps>) { // getServerSideProps의 반환값 자동 추론
-  console.log(data);
-
-  useEffect(()=>{
-    console.log(window.history);
-  }, []);
+export default function Home() {
 
   return (
-    <div>
-      <h1 className={s.title}>인덱스 페이지입니다.</h1>
+    <div className={s.container}>
+      <section>
+        <h3>지금 추천하는 도서</h3>
+        { books.map((book) => (
+          <BookItem key={`recommended-${book.id}`} { ...book } />
+        ))}
+      </section>
+      <section>
+        <h3>등록된 모든 도서</h3>
+        { books.map((book) => (
+          <BookItem key={`all-${book.id}`} { ...book } />
+        ))}
+      </section>
     </div>
   );
 }
