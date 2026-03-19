@@ -1,8 +1,6 @@
 import { BookData } from "@/types";
 
-export async function fetchRandomBooks(): Promise<
-  BookData[]
-> {
+export default async function fetchRandomBooks(): Promise<BookData[]> {
   const url = `http://localhost:8080/book/random`;
 
   try {

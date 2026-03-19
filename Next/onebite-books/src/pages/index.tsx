@@ -5,31 +5,37 @@ import BookItem from "@/components/book-item";
 import books from "@/mock/books.json";
 import { InferGetServerSidePropsType } from 'next';
 
-export function getServerSideProps(){
-  const data = "임시 데이터";
-  return { props: {data} };
+import fetchBooks from "@/lib/fetch-books";
+import fetchRandomBooks from "@/lib/fetch-random-books";
+
+export async function getServerSideProps(){
+const allBooks = await fetchBooks();
+const randomBooks = await fetchRandomBooks();
+
+return { props: {allBooks, randomBooks} };
 }
 
 export default function Home({
-  data
+  // data
+  allBooks, randomBooks
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  console.log(data);
+  // console.log(data);
 
-  useEffect(()=>{
-    console.log(window.history);
-  }, []);
+  // useEffect(()=>{
+  //   console.log(window.history);
+  // }, []);
 
   return (
     <div className={s.container}>
       <section>
         <h3>지금 추천하는 도서</h3>
-        { books.map((book) => (
+        { randomBooks.map((book) => (
           <BookItem key={`recommended-${book.id}`} { ...book } />
         ))}
       </section>
       <section>
         <h3>등록된 모든 도서</h3>
-        { books.map((book) => (
+        { allBooks.map((book) => (
           <BookItem key={`all-${book.id}`} { ...book } />
         ))}
       </section>
