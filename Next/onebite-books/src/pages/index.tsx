@@ -1,10 +1,23 @@
 import SearchbarLayout from "@/components/searchbar-layout";
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import s from "./index.module.css";
 import BookItem from "@/components/book-item";
 import books from "@/mock/books.json";
+import { InferGetServerSidePropsType } from 'next';
 
-export default function Home() {
+export function getServerSideProps(){
+  const data = "임시 데이터";
+  return { props: {data} };
+}
+
+export default function Home({
+  data
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  console.log(data);
+
+  useEffect(()=>{
+    console.log(window.history);
+  }, []);
 
   return (
     <div className={s.container}>
