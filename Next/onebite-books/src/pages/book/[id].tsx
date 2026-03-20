@@ -1,8 +1,24 @@
 // import {useRouter} from "next/router";
 import style from "./[id].module.css";
-import books from "@/mock/books.json";
+// import books from "@/mock/books.json";
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
+import fetchOneBook from "@/lib/fetch-one-book";
 
-export default function Page() {
+export async function getServerSideProps(
+  context: GetServerSidePropsContext
+) {
+  const id = context.params!.id;
+  console.log(`현재 도서 아이디: ${id}`);
+  const book = await fetchOneBook(Number(id));
+  return { props: { book } };
+}
+
+export default function Page({
+  book,
+ }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  if (!book) {
+    return <div>오류가 발생했습니다. 다시 시도해주세요.</div>;
+  }
   // const router = useRouter();
   const {
     id,
@@ -12,7 +28,7 @@ export default function Page() {
     author,
     publisher,
     coverImgUrl,
-  } = books[0];
+  } = book;
 
   return (
     <div className={style.container}>
