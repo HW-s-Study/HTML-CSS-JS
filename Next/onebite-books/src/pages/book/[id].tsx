@@ -1,4 +1,4 @@
-// import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 import style from "./[id].module.css";
 // import books from "@/mock/books.json";
 // import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
@@ -12,7 +12,7 @@ export function getStaticPaths(){
       { params: { id: "2" } },
       { params: { id: "3" } }
     ],
-    fallback: false
+    fallback: false,
   };
 }
 
@@ -28,6 +28,11 @@ export async function getStaticProps(
 export default function Page({
   book,
  }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const router = useRouter();
+  if (router.isFallback) {
+    return <div>로딩 중입니다...</div>;
+  }
+  
   if (!book) {
     return <div>오류가 발생했습니다. 다시 시도해주세요.</div>;
   }

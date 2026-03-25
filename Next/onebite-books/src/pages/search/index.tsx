@@ -18,12 +18,12 @@ import type { BookData } from "@/types";
 // export default function Page({books}:InferGetServerSidePropsType<typeof getServerSideProps>) {
 //  const router = useRouter();
 
-export async function getStaticProps(context:GetStaticPropsContext) {
-  const q = context.query.q;
-  const books = await fetchBooks(q as string);
-  
-  return { props:{ books } };
-}
+// export async function getStaticProps(context:GetStaticPropsContext) {
+//   const q = context.query.q;
+//   const books = await fetchBooks(q as string);
+
+//   return { props:{ books } };
+// }
 
 export default function Page() {
   const [books, setBooks] = useState<BookData[]>([]);
