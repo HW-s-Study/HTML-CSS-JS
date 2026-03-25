@@ -2,23 +2,26 @@ import SearchbarLayout from "@/components/searchbar-layout";
 import { ReactNode, useEffect } from "react";
 import s from "./index.module.css";
 import BookItem from "@/components/book-item";
-import books from "@/mock/books.json";
-import { InferGetServerSidePropsType } from 'next';
+// import books from "@/mock/books.json";
+// import { InferGetServerSidePropsType } from 'next';
+import { InferGetStaticPropsType } from 'next';
 
 import fetchBooks from "@/lib/fetch-books";
 import fetchRandomBooks from "@/lib/fetch-random-books";
 
-export async function getServerSideProps(){
-const allBooks = await fetchBooks();
-const randomBooks = await fetchRandomBooks();
+// export async function getServerSideProps(){
+export async function getStaticProps(){
+  const allBooks = await fetchBooks();
+  const randomBooks = await fetchRandomBooks();
 
-return { props: {allBooks, randomBooks} };
+  return { props: {allBooks, randomBooks} };
 }
 
 export default function Home({
   // data
   allBooks, randomBooks
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+// }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+}:InferGetStaticPropsType<typeof getStaticProps>){
   // console.log(data);
 
   // useEffect(()=>{
