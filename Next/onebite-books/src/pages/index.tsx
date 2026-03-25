@@ -4,13 +4,14 @@ import s from "./index.module.css";
 import BookItem from "@/components/book-item";
 // import books from "@/mock/books.json";
 // import { InferGetServerSidePropsType } from 'next';
-import { InferGetStaticPropsType } from 'next';
+import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 
 import fetchBooks from "@/lib/fetch-books";
 import fetchRandomBooks from "@/lib/fetch-random-books";
 
 // export async function getServerSideProps(){
-export async function getStaticProps(){
+export async function getStaticProps(context: GetStaticPropsContext) {
+  const q = context.query.q;
   const allBooks = await fetchBooks();
   const randomBooks = await fetchRandomBooks();
 
