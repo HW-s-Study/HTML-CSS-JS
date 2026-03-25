@@ -11,7 +11,6 @@ import fetchRandomBooks from "@/lib/fetch-random-books";
 
 // export async function getServerSideProps(){
 export async function getStaticProps(context: GetStaticPropsContext) {
-  const q = context.query.q;
   const allBooks = await fetchBooks();
   const randomBooks = await fetchRandomBooks();
 

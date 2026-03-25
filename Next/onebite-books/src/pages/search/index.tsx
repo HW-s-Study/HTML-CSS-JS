@@ -4,7 +4,8 @@ import { useRouter } from "next/router";
 
 import BookItem from "@/components/book-item";
 // import books from "@/mock/books.json";
-import { InferGetServerSidePropsType, GetServerSidePropsContext } from "next";
+// import { InferGetServerSidePropsType, GetServerSidePropsContext } from "next";
+import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import fetchBooks from "@/lib/fetch-books";
 import type { BookData } from "@/types";
 
@@ -16,6 +17,14 @@ import type { BookData } from "@/types";
 
 // export default function Page({books}:InferGetServerSidePropsType<typeof getServerSideProps>) {
 //  const router = useRouter();
+
+export async function getStaticProps(context:GetStaticPropsContext) {
+  const q = context.query.q;
+  const books = await fetchBooks(q as string);
+  
+  return { props:{ books } };
+}
+
 export default function Page() {
   const [books, setBooks] = useState<BookData[]>([]);
 
@@ -26,9 +35,11 @@ export default function Page() {
     const data = await fetchBooks(q as string);
     setBooks(data);
   }
-  
+
   useEffect(()=>{
-    if(q) fetchSearchResult();
+    if(q) {
+      fetchSearchResult();
+    }
   }, [q]);
 
   return (
