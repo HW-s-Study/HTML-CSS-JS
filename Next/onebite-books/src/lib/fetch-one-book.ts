@@ -3,7 +3,7 @@ import { BookData } from "@/types";
 export default async function fetchOneBook(
   id: number
 ) : Promise<BookData | null> {
-  const url = `https://localhost:8080/book/${id}`;
+  const url = `http://localhost:8080/book/${id}`;
 
   try {
     const response = await fetch(url);
