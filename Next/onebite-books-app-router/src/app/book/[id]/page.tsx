@@ -7,20 +7,18 @@ export default async function Page ({
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const {id} = await params;
-  const books: BookData[] = mock;
-  const book = books.find((book) => String(book.id) === id);
-
-  if (!book) {
-    return (
-      <div>책을 찾을 수 없습니다</div>
+  try {
+    const {id} = await params;
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/book/${id}`
     );
-  }
 
-  const { title, description, coverImgUrl, subTitle, author, publisher } = book;
+    if (!response.ok) throw new Error(response.statusText);
 
-  return (
-    <div>
+    const book: BookData = await response.json();
+    const { title, subTitle, description, author, publisher, coverImgUrl } = book;
+
+    return (
       <div className={style.container}>
         <div
           className={style.cover_img_container}
@@ -35,6 +33,9 @@ export default async function Page ({
         </div>
         <div className={style.description}>{description}</div>
       </div>
-    </div>
-  );
+    );
+  } catch (err) {
+    console.error(err);
+    return <div>오류가 발생했습니다.</div>;
+  }
 }
