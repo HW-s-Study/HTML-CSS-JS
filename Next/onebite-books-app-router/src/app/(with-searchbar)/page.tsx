@@ -19,24 +19,32 @@ async function AllBooks() {
             </div>
         );
     } catch (err) {
-        console.log(err);
+        console.error(err);
         return <div>오류가 발생했습니다.</div>;
     }
 }
 
 async function RecoBooks() {
-    const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_SERVER}/book/random`
-    );
-    const randomBooks: BookData[] = await response.json();
+    try {
+        const response = await fetch(
+            `${process.env.NEXT_PUBLIC_API_SERVER}/book/random`
+        );
+        if (!response.ok) {
+            throw new Error(response.statusText);
+        }
+        const randomBooks: BookData[] = await response.json();
 
-    return (
-        <div>
-            {randomBooks.map((book) => (
-                <BookItem key={book.id} {...book} />
-            ))}
-        </div>
-    );
+        return (
+            <div>
+                {randomBooks.map((book) => (
+                    <BookItem key={book.id} {...book} />
+                ))}
+            </div>
+        );
+    } catch (err) {
+        console.error(err);
+        return <div>오류가 발생했습니다.</div>;
+    }
 }
 
 // export default async function Home() {
