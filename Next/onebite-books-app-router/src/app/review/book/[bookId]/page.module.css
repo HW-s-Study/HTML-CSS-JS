@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  font-size: large;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* ── 리뷰 아이템 ─────────────────────── */
+.review_item {
+  padding: 16px 0;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.content {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.author {
+  font-size: 13px;
+  font-weight: bold;
+  color: #555;
+}
+
+.date {
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* ── 메모이제이션 박스 ─────────── */
+.memo_box {
+  background: #f0f4ff;
+  border: 1px solid #c7d7ff;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+
+.memo_label {
+  font-size: 12px;
+  color: #5b6fff;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.memo_tip {
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: #fff;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #666;
+  border-left: 3px solid #5b6fff;
+  line-height: 1.8;
+}
+
+.placeholder_text {
+  color: #aaa;
+  font-size: 14px;
+}

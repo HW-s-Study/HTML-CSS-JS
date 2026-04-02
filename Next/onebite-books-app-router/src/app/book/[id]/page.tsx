@@ -1,5 +1,5 @@
 import style from "./page.module.css";
-import mock from "@/mock/books.json";
+// import mock from "@/mock/books.json";
 import { BookData } from "@/types";
 
 export default async function Page ({
