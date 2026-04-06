@@ -6,46 +6,36 @@ import style from "./page.module.css";
 // import mock from "@/mock/books.json"
 
 async function AllBooks() {
-    try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/book`, {
-            cache: "force-cache",
-        });
-        if (!response.ok) throw new Error(response.statusText);
-        const allBooks: BookData[] = await response.json();
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/book`, {
+        cache: "force-cache",
+    });
+    if (!response.ok) throw new Error(response.statusText);
 
-        return (
-            <div>
-                {allBooks.map((book) => (
-                    <BookItem key={book.id} {...book} />
-                ))}
-            </div>
-        );
-    } catch (err) {
-        console.error(err);
-        return <div>오류가 발생했습니다.</div>;
-    }
+    const allBooks: BookData[] = await response.json();
+    return (
+        <div>
+            {allBooks.map((book) => (
+                <BookItem key={book.id} {...book} />
+            ))}
+        </div>
+    );
 }
 
 async function RecoBooks() {
-    try {
-        const response = await fetch(
-            `${process.env.NEXT_PUBLIC_API_URL}/book/random`,{
-            next: { revalidate: 5 },
-        });
-        if (!response.ok) throw new Error(response.statusText);
-        const randomBooks: BookData[] = await response.json();
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/book/random`, {
+        cache: "no-store",
+    });
+    if (!response.ok) throw new Error(response.statusText);
 
-        return (
-            <div>
-                {randomBooks.map((book) => (
-                    <BookItem key={book.id} {...book} />
-                ))}
-            </div>
-        );
-    } catch (err) {
-        console.error(err);
-        return <div>오류가 발생했습니다.</div>;
-    }
+    const recoBooks: BookData[] = await response.json();
+    
+    return (
+        <div>
+            {recoBooks.map((book) => (
+                <BookItem key={book.id} {...book} />
+            ))}
+        </div>
+    );
 }
 
 

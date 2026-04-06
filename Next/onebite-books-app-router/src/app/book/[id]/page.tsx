@@ -11,7 +11,8 @@ export default async function Page({
 
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/book/${id}`
+      `${process.env.NEXT_PUBLIC_API_URL}/book/${id}`,
+      { cache: "force-cache" },
     );
 
     if (!response.ok) {
