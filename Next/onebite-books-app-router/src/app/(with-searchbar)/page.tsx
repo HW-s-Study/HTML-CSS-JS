@@ -7,7 +7,7 @@ import style from "./page.module.css";
 
 async function AllBooks() {
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}/book`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/book`, {
             cache: "force-cache",
         });
         if (!response.ok) throw new Error(response.statusText);
@@ -29,8 +29,8 @@ async function AllBooks() {
 async function RecoBooks() {
     try {
         const response = await fetch(
-            `${process.env.NEXT_PUBLIC_API_SERVER}/book/random`,{
-            next: { tags: ["random-books"] },
+            `${process.env.NEXT_PUBLIC_API_URL}/book/random`,{
+            next: { revalidate: 5 },
         });
         if (!response.ok) throw new Error(response.statusText);
         const randomBooks: BookData[] = await response.json();
