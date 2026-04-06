@@ -1,29 +1,50 @@
-"use client"
-import { useEffect, useState } from "react";
+// "use client"
+// import { useEffect, useState } from "react";
 import { BookData } from "@/types";
 import BookItem from "@/components/book-item";
-import mock from "@/mock/books.json"
+import style from "./page.module.css";
+// import mock from "@/mock/books.json"
+
+async function AllBooks() {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}/book`);
+    const allBooks: BookData[] = await response.json();
+
+    return (
+        <div>
+            {allBooks.map((book) => (
+                <BookItem key={book.id} {...book} />
+            ))}
+        </div>
+    );
+}
+
+async function RecoBooks() {
+    const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_SERVER}/book/random`
+    );
+    const randomBooks: BookData[] = await response.json();
+
+    return (
+        <div>
+            {randomBooks.map((book) => (
+            <BookItem key={book.id} {...book} />
+            ))}
+        </div>
+    );
+}
+
 
 export default function Home() {
-  const [books, setBooks] = useState<BookData[]>([])
-  useEffect(()=>{
-    setBooks(mock)
-  })
-  
-  return (
-    <div>
-        <section>
-        <h3>지금 추천하는 도서</h3>
-        {books.map((book)=>(
-          <BookItem key={`recommend-${book.id}`} {...book} />
-        ))}
-      </section>
-      <section>
-        <h3>등록된 모든 도서</h3>
-        {books.map((book)=>(
-          <BookItem key={`all-${book.id}`} {...book} />
-        ))}
-      </section>
-    </div>
-  );
+    return (
+        <div className={style.container}>
+            <section>
+                <h3>지금 추천하는 도서</h3>
+                <RecoBooks />
+            </section>
+            <section>
+                <h3>등록된 모든 도서</h3>
+                <AllBooks />
+            </section>
+        </div>
+    );
 }
