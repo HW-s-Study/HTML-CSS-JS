@@ -29,9 +29,9 @@ async function AllBooks() {
 async function RecoBooks() {
     try {
         const response = await fetch(
-            `${process.env.NEXT_PUBLIC_API_SERVER}/book/random`,
-            { cache: "force-cache" }
-        );
+            `${process.env.NEXT_PUBLIC_API_SERVER}/book/random`,{
+            next: { tags: ["random-books"] },
+        });
         if (!response.ok) throw new Error(response.statusText);
         const randomBooks: BookData[] = await response.json();
 
