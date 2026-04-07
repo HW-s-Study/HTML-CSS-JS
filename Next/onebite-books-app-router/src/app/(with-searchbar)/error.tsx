@@ -11,7 +11,11 @@ export default function Error({ error, reset }: Props) {
   return (
     <div>
       <h1>오류가 발생했습니다.</h1>
-      <button onClick={() => reset()}>다시 시도</button>
+      <button
+        onClick={() => {
+          window.location.reload();
+        }}
+      >다시 시도</button>
     </div>
   );
 }
