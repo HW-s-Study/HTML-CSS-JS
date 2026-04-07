@@ -23,12 +23,12 @@ async function AllBooks() {
 
 async function RecoBooks() {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/book/random`, {
-        cache: "no-store",
+        next: { revalidate: 3 },
     });
     if (!response.ok) throw new Error(response.statusText);
 
     const recoBooks: BookData[] = await response.json();
-    
+
     return (
         <div>
             {recoBooks.map((book) => (
