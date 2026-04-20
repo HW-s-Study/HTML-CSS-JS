@@ -1,0 +1,19 @@
+import * as path from 'path';
+import { Injectable, OnModuleInit } from '@nestjs/common';
+import { PrismaClient } from '@prisma/client';
+import { PrismaLibSql } from '@prisma/adapter-libsql';
+
+@Injectable()
+export class PrismaService extends PrismaClient implements OnModuleInit {
+  constructor() {
+    super({
+      adapter: new PrismaLibSql({
+        url: `file:${path.resolve(process.cwd(), 'prisma/dev.db')}`,
+      }),
+    });
+  }
+
+  async onModuleInit() {
+    await this.$connect();
+  }
+}
