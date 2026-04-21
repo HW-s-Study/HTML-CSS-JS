@@ -15,7 +15,7 @@ export default function RootLayout({
           <Link href={"/authors"}>AUTHROS</Link>
         </header>
         <main>{children}</main>
-        <footer>제작 @winterlood</footer>
+        <footer />
       </body>
     </html>
   );
