@@ -1,5 +1,5 @@
 export default function Page() {
   return (
-    <div>작가 상세 페이지</div>
+    <div>도서 페이지</div>
   )
 }
