@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Instructor {
+  id             Int      @id @default(autoincrement())
+  name           String
+  email          String   @unique
+  officePhone    String?
+  officeLocation String?
+  profileImage   String?
+  courses        Course[]
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Course {
+  id           Int        @id @default(autoincrement())
+  name         String
+  startDate    String
+  endDate      String
+  schedule     String
+  maxStudents  Int
+  classroom    String
+  description  String?
+  instructorId Int
+  instructor   Instructor @relation(fields: [instructorId], references: [id])
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+}
