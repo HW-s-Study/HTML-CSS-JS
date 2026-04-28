@@ -1,17 +1,21 @@
-export interface BookData {
+export interface book {
   id: number;
+  title_kr: string;
   title: string;
-  subTitle: string;
-  author: string;
+  author_id: number;
+  isbn: string;
   publisher: string;
-  description: string;
-  coverImgUrl: string;
+  publisher_at: string;
+  created_at: string;
+  update_at: string;
 }
 
-export interface ReviewData {
+export interface author {
   id: number;
-  content: string;
-  author: string;
-  createdAt: string;
-  bookId: number;
+  name_kr: string;
+  name: string;
+  description: string;
+  created_at: string;
+  updated_at: string;
+  books: [];
 }
