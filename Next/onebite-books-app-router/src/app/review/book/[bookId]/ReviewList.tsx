@@ -1,13 +1,10 @@
-import allReviews from "@/mock/reviews.json";
 import { ReviewData } from "@/types";
 import style from "./page.module.css";
 
-function getReviews(bookId: string): ReviewData[] {
-  return allReviews.filter((review) => review.bookId === Number(bookId));
-}
 
 export default async function ReviewList({ bookId }: { bookId: string }) {
-  const reviews = getReviews(bookId);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/review/book/${bookId}`,{cache:"force-cache"});
+  const reviews: ReviewData[] = await response.json();
 
   return (
     <div className={style.memo_box}>

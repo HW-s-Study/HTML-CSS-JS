@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { startTransition } from "react";
 
 interface Props {
   error: Error & { digest?: string };
@@ -15,7 +16,13 @@ export default function ReviewError({ error, reset }: Props) {
     <div>
       <h3>오류가 발생했습니다</h3>
       <p>{error.message}</p>
-      <button onClick={() => reset()}>다시 시도</button>
+      <button 
+              onClick={() => { 
+                startTransition(() => { 
+                  router.refresh(); 
+                  reset();
+                })
+              }}>다시 시도</button>
       <button onClick={() => router.push("/")}>홈으로</button>
     </div>
   );
