@@ -1,0 +1,88 @@
+{
+  "home": {
+    "recommend": "Recommended Books",
+    "all": "All Books",
+    "producer": "Produced by @winterlood"
+  },
+  "book": {
+    "title1": "Bite-Sized React",
+    "subTitle1": "From JavaScript Basics to Application Deployment",
+    "description1": "The perfect beginner-friendly React guide, from JavaScript fundamentals to deploying applications.\n\nThis book introduces how to use React, one of the most widely used frameworks in web development. It is based on a bestselling course with over 5,000 students on Inflearn and Udemy. Designed for aspiring frontend developers, it provides a solid foundation in React and enough practical knowledge to build various applications.\n\nIt is especially useful for those who hesitate to study React because of weak JavaScript fundamentals, job seekers who are new to React, publishers or backend developers transitioning into frontend development, developers using other frameworks like Vue or Svelte who want to learn practical React, and junior developers who feel their JavaScript or React basics are lacking.",
+    "author1": "Lee Jeonghwan",
+    "publisher1": "Programming Insight",
+
+    "title2": "Clean Code",
+    "subTitle2": "A Handbook of Agile Software Craftsmanship",
+    "description2": "A book for programmers, software engineers, project managers, team leaders, and system analysts who want to write better code.\n\nClean Code introduces the best agile practices for creating clean code through real development experiences alongside the members of Object Mentor. It instills the value of software craftsmanship and helps improve programming skills. But it requires effort. What kind of effort? You must read code — a lot of code. And while reading, you must think about what is right and wrong about it. More importantly, the book encourages reflection on your values as a professional and your dedication to your craft.",
+    "author2": "Robert C. Martin",
+    "publisher2": "Insight",
+
+    "title3": "Effective Java",
+    "subTitle3": "A Complete Guide to Best Practices for the Java Platform",
+    "description3": "A complete guide to Java platform best practices — covering Java 7, 8, and 9.\n\nSince the release of the 2nd edition of Effective Java shortly after Java 6, Java has undergone tremendous changes. This award-winning book has therefore been completely rewritten to fully embrace the latest features of the Java language and libraries. As modern Java began supporting multiple programming paradigms, Java developers became increasingly in need of concrete best practices, which this book provides.\n\nThe 3rd edition reflects the features introduced in Java 7, 8, and 9. In particular, it thoroughly explores the functional programming features newly introduced into Java, including chapters dedicated to lambdas and streams.\n\nTopics newly covered include:\n- Functional interfaces, lambda expressions, method references, and streams\n- Default and static methods in interfaces\n- Type inference including the diamond operator in generic types\n- @SafeVarargs annotation\n- try-with-resources\n- New library features such as Optional<T>, java.time, and collection factory methods",
+    "author3": "Joshua Bloch",
+    "publisher3": "Insight",
+
+    "title4": "HTTP: The Definitive Guide",
+    "subTitle4": "How the Web Works",
+    "description4": "Everything about HTTP, the hidden core behind successful web transactions.\n\nHTTP: The Definitive Guide explains how the HTTP protocol works and how it is used to develop web-based applications. It also introduces other essential Internet technologies that work together with HTTP for efficient operation.\n\nThe book covers HTTP methods, headers, status codes, proxy and cache optimization, web robot and crawler design strategies, cookies, authentication, secure HTTP, internationalization and content negotiation, redirection and load balancing strategies, high-performance HTTP, and HTTP/2.0. It also modernizes many of the examples originally written over a decade ago.",
+    "author4": "David Gourley",
+    "publisher4": "Insight",
+
+    "title5": "Today We Call It a Computer",
+    "subTitle5": "From Leibniz to Turing: The People Who Planted the Seeds of Thinking Machines",
+    "description5": "At last, their dream became reality.\nA 300-year journey across the past, present, and future to build the castle we now call the computer.\n\nMost people vaguely sense that computers and mathematics are connected. However, the instructions of early computers were so simple that it is difficult to see how mathematics relates to them. This book takes readers back to before those mathematical discoveries were made and reveals the ideas and lives behind the foundations of modern computing.\n\nFrom the 17th to the 20th century, brilliant innovators each lived different lives, but all sought to uncover the roots of human thought. Their contributions collectively formed the foundations that made general-purpose digital computers possible. While modern society marvels at rapid technological progress, the people who made it possible are often overlooked. This book tells their story.",
+    "author5": "Martin Davis",
+    "publisher5": "Insight",
+
+    "title6": "One Log a Day: 100 Days to IT Knowledge",
+    "subTitle6": "Building Digital Literacy Through Hardware, Software, Networking, and Data",
+    "description6": "A challenge to build digital literacy and better understand the complex world of IT.\n\nIT knowledge is certainly complex, but not as chaotic as life itself. Once you acquire the necessary knowledge, you can overcome vague anxiety and actively respond to the opportunities and challenges presented by the digital world.\n\nCompanies like Naver, Kakao, Coupang, Baemin, Danggeun Market, and Toss have quickly become part of our daily lives through technologies such as cloud computing, machine learning, and data mining. Meanwhile, the metaverse era, predicted to become a global market worth 300 trillion won by 2025, has arrived.\n\nFortunately, the core ideas behind digital systems — composed of logical structures and physical implementations — remain the same from the earliest 30-ton computers to modern metaverse devices like Microsoft HoloLens. By understanding the four core areas of computing — hardware, software, networking, and data — readers can break down even the most complex digital systems and develop digital literacy.\n\nIf you have curiosity but struggle with action, this book is for you. Join the '100-Day IT Knowledge Challenge' and track your progress day by day to build IT skills you can use for life.",
+    "author6": "Brian W. Kernighan",
+    "publisher6": "Insight",
+
+    "title7": "Growing Together",
+    "subTitle7": "The Path to Agile",
+    "description7": "A proposal for everyone to grow together.\n\n'Together' refers to collaboration, while 'growing' refers to learning. To create meaningful impact in the real world, no one can do it alone. We must grow together — with the people around us and the colleagues we work with every day.\n\nThis book provides insights into developing expertise, collaboration, leadership, mentoring, coaching, and organizational change. It is for people who struggle to change themselves, fail while trying to improve organizations, make decisions under uncertainty, or seek to deepen expertise in a field.\n\nTopics include:\n- What best predicts a person's skill when hiring?\n- Why decades of experience do not necessarily make someone an expert\n- Better communication and collaboration strategies\n- The role of leadership, mentoring, and coaching\n- The secrets of highly adaptive teams\n- How to effectively drive organizational change",
+    "author7": "Kim Changjun",
+    "publisher7": "Insight",
+
+    "title8": "Effective TypeScript",
+    "subTitle8": "62 Specific Ways to Improve Your TypeScript",
+    "description8": "TypeScript is a superset of JavaScript with type information that solves many of JavaScript's painful problems. Inspired by the format of Effective C++ and Effective Java, this book provides 62 practical guidelines on how TypeScript works, what to do, and what to avoid.\n\nThrough hands-on examples applying each guideline, readers can learn how to use TypeScript more effectively. If you have only used TypeScript at a basic level, this book will help you become a TypeScript expert.\n\nTopics covered include:\n- A detailed understanding of the TypeScript type system\n- Designing safe and expressive types\n- Leveraging type inference for maximum safety with minimal syntax\n- Strategic use of the any type\n- How dependencies and declaration files work\n- Migrating JavaScript projects to TypeScript",
+    "author8": "Dan Vanderkam",
+    "publisher8": "Insight",
+
+    "title9": "Frontend Performance Optimization Guide",
+    "subTitle9": "Level Up Your Web Development Skills",
+    "description9": "A popular Inflearn course chosen by over 2,000 students.\nPacked with years of consulting and teaching experience.\nLearn web performance optimization through four real-world services.\n\nWeb performance optimization is a critical concern for frontend developers. Since optimization points and techniques vary depending on the environment and service, the ability to customize optimization strategies is essential.\n\nDrawing from extensive experience consulting on web service performance and teaching optimization at platforms like Samsung SSAFY, Programmers, Inflearn, and StudyPie, the author emphasizes practical exercises over theory.\n\nUsing four commonly built web services as examples, the book teaches intuitive optimization techniques such as content size optimization, lazy loading and preloading of components, bottleneck code optimization, and cache optimization.",
+    "author9": "Yoo Donggyun",
+    "publisher9": "Insight",
+
+    "title10": "The Technical Leader",
+    "subTitle10": "Leadership for Problem Solving Through Innovation, Motivation, and Organization",
+    "description10": "The Technical Leader guides readers toward becoming problem-solving leaders who enable team members to maximize their abilities through innovation and ideas.\n\nThe book redefines leadership and introduces the MOI model, explaining what is essential to becoming a technical leader. It explores barriers to innovation and ways to overcome them, emphasizes the importance of organization, and explains how to transform existing power into organizational strength.\n\nIt also discusses how to become a great organizer, overcome obstacles to change, and put leadership into practice in rapidly evolving environments.",
+    "author10": "Gerald M. Weinberg",
+    "publisher10": "Insight",
+
+    "title11": "The Craftsman",
+    "subTitle11": "Professionalism, Pragmatism, Pride",
+    "description11": "For developers who want to live as craftsmen supporting the world.\n\nDespite the image of software development as a cutting-edge industry, it has long suffered from a shortage of skilled practitioners. A relatively short history, market crashes, and educational trial and error have hindered the accumulation of knowledge and experience.\n\nRobert C. Martin, author of the developer classic Clean Code, proposes software craftsmanship as a solution. In this book, he argues that developers must train in the equivalent disciplines of a craftsman and uphold professionalism and responsibility.\n\nThe author explains how agile practices such as test-driven development, refactoring, simple design, pair programming, and acceptance testing can be applied in practice. He also emphasizes the ethics, standards, responsibility, and pride developers should possess as professionals.\n\nTopics covered include:\n- The meaning of software craftsmanship\n- Five core practices: TDD, refactoring, simple design, pair programming, and acceptance testing\n- How individuals and teams can improve productivity, quality, and courage\n- The true meaning of integrity and teamwork\n- Ten pledges every software professional should follow",
+    "author11": "Robert C. Martin",
+    "publisher11": "Insight"
+  },
+  "search": {
+    "placeholder": "Enter a search term...",
+    "button": "Search"
+  },
+  "review": {
+    "input": "Review Content",
+    "writer": "Writer",
+    "submit": "Submit",
+    "delete": "Delete",
+    "createAt": {
+      "am": "AM",
+      "pm": "PM"
+    }
+  }
+}
