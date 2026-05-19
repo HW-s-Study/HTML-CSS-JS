@@ -1,0 +1,17 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres-hanip-simple
+    restart: always
+    environment:
+      POSTGRES_DB: hanip_simple
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+    - "5434:5432"
+    volumes:
+    - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
