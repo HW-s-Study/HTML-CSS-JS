@@ -1,66 +1,65 @@
-import Image from "next/image";
+import Link from "next/link";
+import { prisma } from "@/lib/prisma";
+import type { Post } from "@/generated/prisma/client";
 import styles from "./page.module.css";
+import SearchForm from "./search-form";
 
-export default function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string }>;
+}) {
+  const { q } = await searchParams;
+  const posts: Post[] = await prisma.post.findMany({
+    where: q
+      ? {
+          OR: [
+            { title: { contains: q, mode: "insensitive" } },
+            { body: { contains: q, mode: "insensitive" } },
+          ],
+        }
+      : undefined,
+    orderBy: { createdAt: "desc" },
+  });
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className={styles.container}>
+      <div className={styles.wrapper}>
+        <header className={styles.header}>
+          <h1 className={styles.title}>게시판</h1>
+          <Link href="/posts/create" className={styles.writeButton}>
+            글쓰기
+          </Link>
+        </header>
+
+        <SearchForm />
+
+        {q && (
+          <p className={styles.searchInfo}>
+            <strong>&quot;{q}&quot;</strong> 검색 결과 {posts.length}건
           </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+        )}
+
+        {posts.length === 0 ? (
+          <div className={styles.empty}>
+            <p>아직 게시글이 없습니다.</p>
+            <p className={styles.emptySub}>첫 번째 글을 작성해 보세요!</p>
+          </div>
+        ) : (
+          <ul className={styles.list}>
+            {posts.map((post) => (
+              <li key={post.id} className={styles.item}>
+                <Link href={`/posts/${post.id}`} className={styles.link}>
+                  <span className={styles.itemTitle}>{post.title}</span>
+                  <span className={styles.itemDate}>
+                    {new Date(post.createdAt).toLocaleDateString("ko-KR")}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </main>
   );
 }
