@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Menu {
+  id          Int      @id @default(autoincrement())
+  name        String
+  price       Int
+  description String
+  category    String   // DRINK, DESSERT 등
+  createdAt   DateTime @default(now())
+  reviews     Review[]
+}
+
+model Review {
+  id        Int      @id @default(autoincrement())
+  menuId    Int
+  author    String
+  content   String
+  createdAt DateTime @default(now())
+  menu      Menu     @relation(fields: [menuId], references: [id], onDelete: Cascade)
+}
